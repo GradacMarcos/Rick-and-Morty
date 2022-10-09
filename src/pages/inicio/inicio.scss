@@ -1,0 +1,15 @@
+div.Inicio {
+  h1.title {
+    color: red;
+    text-align: center;
+    font-size: 90px;
+    color: white;
+  }
+  div.cards {
+    margin-left: 10rem;
+  }
+  div.cards div.MyCard {
+    display: inline-block;
+    margin: 2rem;
+  }
+}
