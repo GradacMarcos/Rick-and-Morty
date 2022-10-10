@@ -1,58 +1,48 @@
 // Ya creada la pagina ahora toca crear el componente
-import { Grid, LinearProgress } from "@mui/material";
+import { Grid } from "@mui/material";
 import * as React from "react";
 import MyCard from "../../components/card";
+import { fetchData } from "../../utils/fetchs";
 import "./inicio.scss";
 
 function Inicio() {
   const [data, setData] = React.useState(null);
-  console.log(data);
+  const [images, setImages] = React.useState([1, 2, 3, 4, 5, 6]);
+  const [titles, setTitles] = React.useState([])
+
+  React.useEffect(() => {
+    fetchData("https://rickandmortyapi.com/api/character", (data) => {
+      console.log(data)
+      let imgs = [];
+      let names = [];
+      for (let i = 0; i < 6; i++) {
+        const aleatory = Math.floor(Math.random() * (data.results.length - 1));
+        const img = data.results[aleatory].image;
+        const name = data.results[aleatory].name;
+        imgs.push(img);
+        names.push(name);
+      }
+      setImages(imgs);
+      setTitles(names)
+      setData(data);
+    });
+  }, []);
+
   return (
     <div className="Inicio">
       <h1 className="title">The Rick and Morty</h1>
       <Grid container className="cards">
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
-        <MyCard
-          isLoading
-          imgsrc="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-          subtitle="subtitulo"
-          title="Titulo"
-          position="horizontal"
-        />
+        {images.map((img, i) => {
+          return (
+            <MyCard
+              isLoading={data ? false : true}
+              imgsrc={img}
+              subtitle="subtitulo"
+              title={titles[i]}
+              position="horizontal"
+            />
+          );
+        })}
       </Grid>
     </div>
   );

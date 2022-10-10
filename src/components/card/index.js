@@ -11,7 +11,7 @@ export default function MyCard(props) {
   const { title, subtitle, imgsrc, position, isLoading } = props;
 
   let size = 0;
-  if (position == "vertical") {
+  if (position === "vertical") {
     size = 12;
   } else {
     size = 6;
