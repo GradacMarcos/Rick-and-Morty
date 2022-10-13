@@ -2,17 +2,19 @@
 import { Grid } from "@mui/material";
 import * as React from "react";
 import MyCard from "../../components/card";
+import Navbar from "../../Navbar";
+
 import { fetchData } from "../../utils/fetchs";
 import "./inicio.scss";
 
 function Inicio() {
   const [data, setData] = React.useState(null);
   const [images, setImages] = React.useState([1, 2, 3, 4, 5, 6]);
-  const [titles, setTitles] = React.useState([])
+  const [titles, setTitles] = React.useState([]);
 
   React.useEffect(() => {
     fetchData("https://rickandmortyapi.com/api/character", (data) => {
-      console.log(data)
+      console.log(data);
       let imgs = [];
       let names = [];
       for (let i = 0; i < 6; i++) {
@@ -23,13 +25,16 @@ function Inicio() {
         names.push(name);
       }
       setImages(imgs);
-      setTitles(names)
+      setTitles(names);
       setData(data);
     });
   }, []);
 
   return (
     <div className="Inicio">
+      <Navbar>
+        
+      </Navbar>
       <h1 className="title">The Rick and Morty</h1>
       <Grid container className="cards">
         {images.map((img, i) => {
