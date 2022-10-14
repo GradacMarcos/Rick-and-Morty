@@ -1,9 +1,12 @@
+import { Grid } from "@mui/material";
+import Navbar from "../../components/navbar";
 
 
 export default function Episodios() {
   return (
-    <div>
+    <Grid className="episodios">
+      <Navbar />
       <h1>Episodios</h1>
-    </div>
+    </Grid>
   );
 }

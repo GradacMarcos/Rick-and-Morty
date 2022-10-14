@@ -14,12 +14,18 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import HomeIcon from "@mui/icons-material/Home";
 import { Grid } from "@mui/material";
-import "./navbar.scss"
+import "./navbar.scss";
+import { useNavigate } from "react-router-dom";
 
-const pages = ["Episodios", "Pricing", "Blog"];
+const pages = ["Episodios", "Personajes"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
+  let navigate = useNavigate();
+  const redirectTo = (page) => {
+    navigate(page);
+  };
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -121,7 +127,7 @@ const Navbar = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleCloseNavMenu}
+                  onClick={() => redirectTo(page)}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
