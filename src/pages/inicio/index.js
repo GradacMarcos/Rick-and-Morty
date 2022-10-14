@@ -2,7 +2,7 @@
 import { Grid } from "@mui/material";
 import * as React from "react";
 import MyCard from "../../components/card";
-import Navbar from "../../Navbar";
+import Navbar from "../../components/navbar";
 
 import { fetchData } from "../../utils/fetchs";
 import "./inicio.scss";
@@ -32,9 +32,7 @@ function Inicio() {
 
   return (
     <div className="Inicio">
-      <Navbar>
-        
-      </Navbar>
+      <Navbar />
       <h1 className="title">The Rick and Morty</h1>
       <Grid container className="cards">
         {images.map((img, i) => {
