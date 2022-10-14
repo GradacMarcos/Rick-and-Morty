@@ -23,7 +23,7 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const Navbar = () => {
   let navigate = useNavigate();
   const redirectTo = (page) => {
-    navigate(page);
+    navigate("/" + page);
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
