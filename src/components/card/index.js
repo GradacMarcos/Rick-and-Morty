@@ -8,6 +8,7 @@ import "./card.scss";
 
 export default function MyCard(props) {
   // position debe ser "vertical" u "horizontal"
+  // isLoading es un booleano que determina si la imagen esta cargando
   const { title, subtitle, imgsrc, position, isLoading } = props;
 
   let size = 0;
