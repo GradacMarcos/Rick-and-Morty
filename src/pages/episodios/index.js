@@ -1,13 +1,13 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import MyCard from "../../components/card";
 import Navbar from "../../components/navbar";
 import { fetchData } from "../../utils/fetchs";
+import BasicCard from "../../components/BasicCard";
 
 export default function Episodios() {
   //paso 1
   const [data, setData] = React.useState(null);
-  console.log(data);
+  
 
   //paso 3
   React.useEffect(() => {
@@ -21,12 +21,17 @@ export default function Episodios() {
     <Grid className="episodios">
       <Navbar />
       <h1>Episodios</h1>
-      {data?.results.map((e) => (
-        <MyCard
-          title={e.name}
-          position="vertical"
-        />
-      ))}
+      <Grid container className="cards">
+        {data?.results.map((e) => (
+          <Grid item xs={3}>
+            <BasicCard
+              title={"Nombre: " + e.name}
+              subtitle={"Fecha de lanzamiento: " + e.air_date}
+              bodyText={"Episodio: " + e.episode}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </Grid>
   );
 }
