@@ -23,7 +23,7 @@ export default function Episodios() {
       <h1>Episodios</h1>
       <Grid container className="cards">
         {data?.results.map((e) => (
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <BasicCard
               title={"Nombre: " + e.name}
               subtitle={"Fecha de lanzamiento: " + e.air_date}
