@@ -7,19 +7,22 @@ import BasicCard from "../../components/BasicCard";
 export default function Episodios() {
   //paso 1
   const [data, setData] = React.useState(null);
-  
+  const [search, setSearch] = React.useState("");
 
   //paso 3
   React.useEffect(() => {
-    fetchData("https://rickandmortyapi.com/api/episode", (apiResponse) => {
-      setData(apiResponse);
+    fetchData("https://rickandmortyapi.com/api/episode/?name=" + search, (apiResponse) => {
+      setData(apiResponse); 
     });
-  }, []);
+  }, [search]);
+  function searchFunction(s) {
+    setSearch(s);
+  }
 
   //paso 2
   return (
     <Grid className="episodios">
-      <Navbar />
+      <Navbar searchFunction={searchFunction} />
       <h1>Episodios</h1>
       <Grid container className="cards">
         {data?.results.map((e) => (

@@ -32,7 +32,7 @@ function Inicio() {
 
   return (
     <div className="Inicio">
-      <Navbar />
+      <Navbar showSearch={false} />
       <h1 className="title">The Rick and Morty</h1>
       <Grid container className="cards">
         {images.map((img, i) => {

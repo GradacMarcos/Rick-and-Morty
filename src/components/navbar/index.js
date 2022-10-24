@@ -20,7 +20,7 @@ import SearchIcon from "@mui/icons-material/Search";
 const pages = ["Episodios", "Personajes"];
 
 const Navbar = (props) => {
-  const { searchFunction } = props;
+  const { searchFunction, showSearch = true } = props;
   let navigate = useNavigate();
   const redirectTo = (page) => {
     navigate("/" + page);
@@ -127,21 +127,25 @@ const Navbar = (props) => {
               ))}
             </Box>
 
-            <TextField
-              id="search-basic"
-              onChange={(v) => searchFunction(v.target.value)}
-              label="Buscar"
-              variant="outlined"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment>
-                    <IconButton>
-                      <SearchIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+            {showSearch ? (
+              <TextField
+                id="search-basic"
+                onChange={(v) => searchFunction(v.target.value)}
+                label="Buscar"
+                variant="outlined"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment>
+                      <IconButton>
+                        <SearchIcon />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            ) : (
+              <></>
+            )}
           </Toolbar>
         </Container>
       </AppBar>
