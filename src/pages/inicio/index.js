@@ -1,11 +1,11 @@
 // Ya creada la pagina ahora toca crear el componente
 import { Grid } from "@mui/material";
 import * as React from "react";
-import MyCard from "../../components/card";
+import MyCard from "../../components/Card";
 import Navbar from "../../components/navbar";
-
 import { fetchData } from "../../utils/fetchs";
 import "./inicio.scss";
+import Footer from "../../components/Footer";
 
 function Inicio() {
   const [data, setData] = React.useState(null);
@@ -47,6 +47,7 @@ function Inicio() {
           );
         })}
       </Grid>
+      <Footer />
     </div>
   );
 }

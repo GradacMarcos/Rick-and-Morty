@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../../components/navbar";
 import { fetchData } from "../../utils/fetchs";
 import BasicCard from "../../components/BasicCard";
+import Footer from "../../components/Footer";
 
 export default function Episodios() {
   //paso 1
@@ -35,6 +36,7 @@ export default function Episodios() {
           </Grid>
         ))}
       </Grid>
+      <Footer />
     </Grid>
   );
 }

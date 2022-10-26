@@ -1,0 +1,25 @@
+div.Footer {
+    
+    background-color: rgb(41, 39, 39);
+    padding: 5rem 0rem;
+    color: white;
+
+    div.logo {
+        margin-left: 2rem;
+    }
+    img.logo {
+        
+        height: 100px;
+        width: 80px;
+       
+    }
+    div.enlaces {
+        text-align: start;
+    }
+    div.redes {
+        svg {
+            margin: 0.5rem;
+        }
+        text-align: center;
+    }
+}

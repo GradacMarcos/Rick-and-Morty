@@ -1,8 +1,10 @@
 import { Grid } from "@mui/material";
-import MyCard from "../../components/card";
+import MyCard from "../../components/Card";
 import React from "react";
 import Navbar from "../../components/navbar";
 import { fetchData } from "../../utils/fetchs";
+import Footer from "../../components/Footer";
+
 export default function Personajes() {
   const [data, setData] = React.useState(null);
   const [search, setSearch] = React.useState("");
@@ -33,6 +35,7 @@ export default function Personajes() {
           </Grid>
         ))}
       </Grid>
+      <Footer />
     </Grid>
   );
 }
