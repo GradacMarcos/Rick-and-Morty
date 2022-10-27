@@ -9,7 +9,7 @@ import "./card.scss";
 export default function MyCard(props) {
   // position debe ser "vertical" u "horizontal"
   // isLoading es un booleano que determina si la imagen esta cargando
-  const { title, subtitle, imgsrc, position, isLoading } = props;
+  const { title, subtitle, imgsrc, position, isLoading, onClick } = props;
 
   let size = 0;
   if (position === "vertical") {
@@ -20,7 +20,8 @@ export default function MyCard(props) {
 
   return (
     <Card className="MyCard">
-      <CardActionArea>
+      <CardActionArea
+      onClick={onClick}>
         <Grid className="card" container>
           <Grid item xs={size}>
             {isLoading ? (
