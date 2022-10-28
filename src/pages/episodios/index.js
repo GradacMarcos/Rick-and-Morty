@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/Navbar";
 import { fetchData } from "../../utils/fetchs";
 import BasicCard from "../../components/BasicCard";
 import Footer from "../../components/Footer";

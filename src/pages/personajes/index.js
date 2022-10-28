@@ -1,11 +1,12 @@
-import { Grid } from "@mui/material";
+import { CardMedia, Grid } from "@mui/material";
 import MyCard from "../../components/Card";
 import React from "react";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/Navbar";
 import { fetchData } from "../../utils/fetchs";
 import Footer from "../../components/Footer";
 import { SideDrawer } from "../../components/SideDrawer";
 import "./personajes.scss";
+import Text from "../../components/Text";
 
 export default function Personajes() {
   const [data, setData] = React.useState(null);
@@ -13,6 +14,8 @@ export default function Personajes() {
   const [drawerData, setDrawerData] = React.useState({
     open: false,
     title: "",
+    imgsrc: "",
+    species: "",
   });
   React.useEffect(() => {
     fetchData(
@@ -36,8 +39,10 @@ export default function Personajes() {
             <MyCard
               onClick={() => {
                 setDrawerData({
+                  imgsrc: e.image,
                   open: true,
                   title: e.name,
+                  species: e.species,
                 });
               }}
               title={e.name}
@@ -54,7 +59,20 @@ export default function Personajes() {
         open={drawerData.open}
         setOpen={(ps) => setDrawerData({ ...ps, open: false })}
       >
-        <h1 className="asda">aca va el cuerpo</h1> 
+        <Grid className="sideDrawer">
+          <CardMedia
+            component="img"
+            height="100"
+            image={drawerData.imgsrc}
+            alt="green iguana"
+          />
+          <Grid className="especies" container>
+            <Text variant="body">Especie:</Text>
+            <Grid item xs={12}>
+              <Text variant="h4">{drawerData.species}</Text>
+            </Grid>
+          </Grid>
+        </Grid>
       </SideDrawer>
       <Footer />
     </Grid>

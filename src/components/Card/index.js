@@ -2,9 +2,9 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid, Skeleton } from "@mui/material";
 import "./card.scss";
+import Text from "../Text";
 
 export default function MyCard(props) {
   // position debe ser "vertical" u "horizontal"
@@ -20,8 +20,7 @@ export default function MyCard(props) {
 
   return (
     <Card className="MyCard">
-      <CardActionArea
-      onClick={onClick}>
+      <CardActionArea onClick={onClick}>
         <Grid className="card" container>
           <Grid item xs={size}>
             {isLoading ? (
@@ -40,17 +39,13 @@ export default function MyCard(props) {
               {isLoading ? (
                 <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
               ) : (
-                <Typography gutterBottom variant="h5" component="div">
-                  {title}
-                </Typography>
+                <Text variant="h5">{title}</Text>
               )}
               ¨
               {isLoading ? (
                 <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
               ) : (
-                <Typography variant="body2" color="text.secondary">
-                  {subtitle}
-                </Typography>
+                <Text variant="body2">{subtitle}</Text>
               )}
             </CardContent>
           </Grid>

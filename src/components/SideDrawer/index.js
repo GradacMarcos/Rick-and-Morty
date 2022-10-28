@@ -1,18 +1,31 @@
-import { Drawer, Grid, Typography } from "@mui/material";
+import { Drawer, Grid } from "@mui/material";
+import Text from "../Text";
+import "./drawer.scss";
 
 export function SideDrawer(props) {
   const { title, children, open, setOpen } = props;
 
   return (
     <Grid className="Drawer">
-      <Drawer 
+      <Drawer
+        PaperProps={{
+          sx: {
+            backgroundColor: "#292727",
+            color: "white",
+            width: "25%",
+          },
+        }}
         anchor="right"
         open={open}
         onClose={() => {
           setOpen(false);
         }}
       >
-        <Typography variant="h4">{title}</Typography>
+        <Grid className="title">
+          <Text className="drawer-title" variant="h4">
+            {title}
+          </Text>
+        </Grid>
         {children}
       </Drawer>
     </Grid>

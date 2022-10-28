@@ -2,7 +2,7 @@
 import { Grid } from "@mui/material";
 import * as React from "react";
 import MyCard from "../../components/Card";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/Navbar";
 import { fetchData } from "../../utils/fetchs";
 import "./inicio.scss";
 import Footer from "../../components/Footer";
