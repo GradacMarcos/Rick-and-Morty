@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar";
 import { fetchData } from "../../utils/fetchs";
 import Footer from "../../components/Footer";
 import { SideDrawer } from "../../components/SideDrawer";
+import "./personajes.scss";
 
 export default function Personajes() {
   const [data, setData] = React.useState(null);
@@ -25,7 +26,7 @@ export default function Personajes() {
     setSearch(s);
   }
   return (
-    <Grid className="personajes">
+    <Grid className="Personaje">
       <Navbar searchFunction={searchFunction} />
       <h1>Personajes</h1>
 
@@ -53,7 +54,7 @@ export default function Personajes() {
         open={drawerData.open}
         setOpen={(ps) => setDrawerData({ ...ps, open: false })}
       >
-        <h1>aca va el cuerpo</h1>
+        <h1 className="asda">aca va el cuerpo</h1> 
       </SideDrawer>
       <Footer />
     </Grid>

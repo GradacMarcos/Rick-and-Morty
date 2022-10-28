@@ -1,5 +1,10 @@
 div.MyNavbar {
-    svg.home-icon{
-        margin: 10px;
-    }
+  div.container {
+    background-color: rgb(41, 39, 39);
+    position: fixed;
+    z-index: 99;
+  }
+  svg.home-icon {
+    margin: 10px;
+  }
 }

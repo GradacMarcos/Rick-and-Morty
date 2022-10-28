@@ -5,7 +5,7 @@ export function SideDrawer(props) {
 
   return (
     <Grid className="Drawer">
-      <Drawer
+      <Drawer 
         anchor="right"
         open={open}
         onClose={() => {

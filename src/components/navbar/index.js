@@ -39,7 +39,7 @@ const Navbar = (props) => {
   return (
     <Grid className="MyNavbar">
       <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container className="container" maxWidth="xl">
           <Toolbar disableGutters>
             <HomeIcon className="home-icon" />
             <Typography

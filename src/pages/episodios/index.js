@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar";
 import { fetchData } from "../../utils/fetchs";
 import BasicCard from "../../components/BasicCard";
 import Footer from "../../components/Footer";
+import "./episodios.scss";
 
 export default function Episodios() {
   //paso 1
@@ -24,7 +25,7 @@ export default function Episodios() {
   return (
     <Grid className="episodios">
       <Navbar searchFunction={searchFunction} />
-      <h1>Episodios</h1>
+      <h1 className="title">Episodios</h1>
       <Grid container className="cards">
         {data?.results.map((e) => (
           <Grid item xs={4}>
