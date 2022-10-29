@@ -10,6 +10,10 @@ export function SideDrawer(props) {
       <Drawer
         PaperProps={{
           sx: {
+            border: "0px",
+            borderLeft: "3px",
+            borderStyle:"solid",
+            borderColor: "#862e5f",
             backgroundColor: "#292727",
             color: "white",
             width: "25%",

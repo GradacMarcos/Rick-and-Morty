@@ -16,6 +16,9 @@ export default function Personajes() {
     title: "",
     imgsrc: "",
     species: "",
+    status: "",
+    gender: "",
+    origin: "",
   });
   React.useEffect(() => {
     fetchData(
@@ -43,6 +46,9 @@ export default function Personajes() {
                   open: true,
                   title: e.name,
                   species: e.species,
+                  status: e.status,
+                  gender: e.gender,
+                  origin: e.origin.name,
                 });
               }}
               title={e.name}
@@ -66,10 +72,30 @@ export default function Personajes() {
             image={drawerData.imgsrc}
             alt="green iguana"
           />
-          <Grid className="especies" container>
-            <Text variant="body">Especie:</Text>
-            <Grid item xs={12}>
-              <Text variant="h4">{drawerData.species}</Text>
+          <Grid className="cuerpo">
+            <Grid container>
+              <Text variant="body">Especie:</Text>
+              <Grid item xs={12}>
+                <Text variant="h4">{drawerData.species}</Text>
+              </Grid>
+              <Grid>
+                <Text variant="body">Estado:</Text>
+              </Grid>
+              <Grid item xs={12}>
+                <Text variant="h4">{drawerData.status}</Text>
+              </Grid>
+              <Grid>
+                <Text variant="body">Genero:</Text>
+              </Grid>
+              <Grid item xs={12}>
+                <Text variant="h4">{drawerData.gender}</Text>
+              </Grid>
+              <Grid>
+                <Text variant="body">origen:</Text>
+              </Grid>
+              <Grid item xs={12}>
+                <Text variant="h4">{drawerData.origin}</Text>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
