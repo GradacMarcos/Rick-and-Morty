@@ -19,6 +19,7 @@ export default function Personajes() {
     status: "",
     gender: "",
     origin: "",
+    created: "",
   });
   React.useEffect(() => {
     fetchData(
@@ -49,6 +50,7 @@ export default function Personajes() {
                   status: e.status,
                   gender: e.gender,
                   origin: e.origin.name,
+                  created: e.created,
                 });
               }}
               title={e.name}
@@ -95,6 +97,12 @@ export default function Personajes() {
               </Grid>
               <Grid item xs={12}>
                 <Text variant="h4">{drawerData.origin}</Text>
+              </Grid>
+              <Grid>
+                <Text variant="body">Fecha de creacion:</Text>
+              </Grid>
+              <Grid item xs={12}>
+                <Text variant="h4">{drawerData.created}</Text>
               </Grid>
             </Grid>
           </Grid>

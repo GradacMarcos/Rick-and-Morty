@@ -41,7 +41,7 @@ export default function MyCard(props) {
               ) : (
                 <Text variant="h5">{title}</Text>
               )}
-              ¨
+            
               {isLoading ? (
                 <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
               ) : (
