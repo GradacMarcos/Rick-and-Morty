@@ -6,6 +6,7 @@ import "./basic-card.scss";
 import Text from "../Text";
 import { CardActionArea } from "@mui/material";
 
+
 export default function BasicCard(props) {
   const { title, subtitle, bodyText, position, isLoading, onClick } = props;
 

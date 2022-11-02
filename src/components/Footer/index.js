@@ -1,9 +1,10 @@
-import { CardActionArea, Grid, Typography } from "@mui/material";
+import { CardActionArea, Grid, Stack, Typography } from "@mui/material";
 import "./footer.scss";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PhoneIcon from "@mui/icons-material/Phone";
+import Button from "@mui/material/Button";
 import EmailIcon from "@mui/icons-material/Email";
 
 export default function Footer(props) {
@@ -25,25 +26,43 @@ export default function Footer(props) {
               <Typography variant="subtitle1">357164646</Typography>
             </Grid>
           </Grid>
-          <Grid container>
+          <Grid className="email" container>
             <Grid item xs={1}>
               <EmailIcon color="secondary" />
             </Grid>
             <Grid item xs={11}>
-              <Typography variant="subtitle1">
-                marcosgradac2022@gmail.com
-              </Typography>
+              <Button
+                onClick={onClick}
+                href="https://mail.google.com/mail/u/0/#sent?compose=new"
+                variant="text"
+              >
+                Gmail
+              </Button>
             </Grid>
           </Grid>
         </Grid>
         <Grid className="enlaces" item xs={3}>
           <Typography variant="h4">ENLACES</Typography>
-          <Typography variant="subtitle1">Episodios</Typography>
-          <Typography variant="subtitle1">Persobajes</Typography>
+          <Stack spacing={2} direction="row">
+            <Button
+              onClick={onClick}
+              href="http://localhost:3000/Episodios/"
+              variant="outlined"
+            >
+              Episodios
+            </Button>
+            <Button
+              onClick={onClick}
+              href="http://localhost:3000/Personajes"
+              variant="outlined"
+            >
+              Personajes
+            </Button>
+          </Stack>
         </Grid>
         <Grid className="redes" item xs={5}>
           <Typography variant="h4">REDES SOCIALES</Typography>
-          <Grid container>
+          <Grid className="icons" container>
             <Grid item xs={3}>
               <CardActionArea
                 onClick={onClick}
